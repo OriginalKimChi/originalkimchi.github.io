@@ -31,7 +31,7 @@ getNewQuestion = () => {
     if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score);
         //go to the end page
-        return window.location.assign('file:///Users/jacobsalad/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript-master/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript-master/Quiz%20App%20Master/end.html');
+        return window.location.assign('./end.html');
     }
     questionCounter++;
     progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
