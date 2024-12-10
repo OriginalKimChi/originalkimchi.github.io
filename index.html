@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustainability Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #e6f1fc;
+      color: #e32636;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      width: 100px;
+      height: auto;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #e32636;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #bf1f2d;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <img src="/Users/jacobsalad/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript-master/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript-master/Quiz App Master/Nottingham_Forest_F.C._logo.png" alt="Forest Logo">
+  </div>
+  <div class="title">Sustainability Quiz</div>
+  <div class="button-container">
+    <button onclick="startQuiz()">Play</button>
+    <button onclick="viewResults()">Result</button>
+    <button onclick="viewInfos()">Informations</button>
+  </div>
+
+  <script>
+    function startQuiz() {
+        window.location.href = "./game.html";
+    }
+
+    function viewResults() {
+        window.location.href = "./highscores.html";
+    }
+
+    function viewInfos() {
+        window.location.href = "./informations.html";
+    }
+  </script>
+</body>
+</html>
