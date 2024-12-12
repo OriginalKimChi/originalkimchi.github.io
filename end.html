@@ -1,39 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Congrats!</title>
-    <link rel="stylesheet" href="app.css" />
-  </head>
-  <body>
-    <img src="./Nottingham_Forest_F.C._logo.png" alt="logo" style="width:80px; position: absolute; top: 0; left: 0; padding: 20px;" />
-    <div class="container">
-      <div id="end" class="flex-center flex-column">
-        <h1 style="color: black;">Your score is</h1>
-        <h1 id="finalScore"></h1>
-        <form>
-          <input
-            type="text"
-            name="username"
-            id="username"
-            placeholder="username"
-          />
-          <button
-            type="submit"
-            class="btn"
-            id="saveScoreBtn"
-            onclick="saveHighScore(event)"
-            disabled
-          >
-            Save
-          </button>
-        </form>
-        <a class="btn" href="./game.html">Play Again</a>
-        <a class="btn" href="./index.html">Go Home</a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+  <title>Congrats!</title>
+  <link rel="stylesheet" href="app.css" />
+</head>
+
+<body>
+  <img
+    src="./Nottingham_Forest_F.C._logo.png"
+    alt="logo" style="width:80px; position: absolute; top: 0; left: 0; padding: 20px;" />
+  <div class="container">
+    <div id="end" class="flex-center flex-column">
+      <h1 style="color: black; margin-top: 200px;" id="scoreTextLow">Your score is</h1>
+      <h2 style="color: black; margin-top: 400px; text-align: center;" id="scoreTextHigh"></h2>
+      <h1 id="finalScore"></h1>
+      <h3 id="couponGuide" style="display: none; color: black; text-align: center; margin-bottom: 30px; margin-top: 30px;">You can redeem your drink at the Nottingham Forest FC food court with the barcode below.</h3>
+      <svg id="barcode" style="display: none;"></svg>
+      <h3 style="color: black; text-align: center; margin-bottom: 30px; margin-top: 30px;">You can find out more about Nottingham Forest FC's <strong>sustainability</strong> on
+        our guide page below.</h3>
+      <div class="button-container">
+        <button onclick="viewInfos()">Informations</button>
+        <button onclick="goHome()">Go Home</button>
       </div>
+
     </div>
-    <script src="end.js"></script>
-  </body>
+  </div>
+  <script src="end.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #e6f1fc;
+      color: #e32636;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 100px;
+      gap: 15px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #e32636;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #bf1f2d;
+    }
+  </style>
+</body>
+
 </html>

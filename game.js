@@ -29,6 +29,9 @@ startGame = () => {
 
 getNewQuestion = () => {
     if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+        if (localStorage.getItem('firstScore') == null) {
+            localStorage.setItem('firstScore', score);    
+        }
         localStorage.setItem('mostRecentScore', score);
         //go to the end page
         return window.location.assign('./end.html');

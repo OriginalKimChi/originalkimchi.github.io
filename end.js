@@ -1,29 +1,47 @@
 const username = document.getElementById('username');
 const saveScoreBtn = document.getElementById('saveScoreBtn');
 const finalScore = document.getElementById('finalScore');
+const firstScore = localStorage.getItem('firstScore');
 const mostRecentScore = localStorage.getItem('mostRecentScore');
 
 const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
-const MAX_HIGH_SCORES = 5;
+const MAX_HIGH_SCORES = 80;
 
-finalScore.innerText = mostRecentScore + "/100";
+getScore();
 
 username.addEventListener('keyup', () => {
     saveScoreBtn.disabled = !username.value;
 });
 
-saveHighScore = (e) => {
-    e.preventDefault();
+function getScore() {
+    if (mostRecentScore >= MAX_HIGH_SCORES) {
+        scoreTextHigh.innerText = "Congratuation!\nYou are familiar with Nottingham Forest FC's sustainability policy.";
+        scoreTextLow.style = "display : none";
+        if (firstScore >= MAX_HIGH_SCORES) {
+            couponGuide.style = "display : inline; color: black; text-align: center; margin-bottom: 30px;";
+            generateBarcode();
+        }
+    } else {
+        scoreTextHigh.style = "display : none";
+    }
+    finalScore.innerText = mostRecentScore + "/100";
+}
 
-    const score = {
-        score: mostRecentScore,
-        name: username.value,
-    };
-    highScores.push(score);
-    highScores.sort((a, b) => b.score - a.score);
-    highScores.splice(5);
+function generateBarcode() {
+    JsBarcode("#barcode", '123124531451767', {
+        format: "CODE128",
+        lineColor: "#000",
+        width: 2,
+        height: 50,
+        displayValue: false
+    });
+}
 
-    localStorage.setItem('highScores', JSON.stringify(highScores));
-    window.location.assign('file:///Users/jacobsalad/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript-master/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript-master/Quiz%20App%20Master/');
+function viewInfos() {
+    window.location.href = "./informations.html";
+};
+
+function goHome() {
+    window.location.href = "./index.html";
 };
