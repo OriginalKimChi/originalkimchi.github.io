@@ -87,7 +87,7 @@ try {
     loadedQuestions = [
         
         {
-            "question": "What is Cynophobia the fear of?",
+            "question": "What renewable energy source powers Nottingham Forest's Fan Zone??",
             "correct_answer": "Solar Panels",
             "incorrect_answers": [
                 "Wind Turbines",
