@@ -11,21 +11,22 @@
 </head>
 
 <body>
-  <img
-    src="./Nottingham_Forest_F.C._logo.png"
-    alt="logo" style="width:80px; position: absolute; top: 0; left: 0; padding: 20px;" />
+  
+  <!-- <div class="head"></div> -->
   <div class="container">
+    <div class="logo">
+      <img src="./Nottingham_Forest_F.C._logo.png" alt="logo" style="width:80px; padding: 20px;" />
+    </div>
     <div id="end" class="flex-center flex-column">
-      <h1 style="color: black; margin-top: 200px;" id="scoreTextLow">Your score is</h1>
-      <h2 style="color: black; margin-top: 400px; text-align: center;" id="scoreTextHigh"></h2>
-      <h1 id="finalScore"></h1>
-      <h3 id="couponGuide" style="display: none; color: black; text-align: center; margin-bottom: 30px; margin-top: 30px;">You can redeem your drink at the Nottingham Forest FC food court with the barcode below.</h3>
+      <h2 style="color: black; margin-top: 0px; text-align: center;" id="scoreTextHigh"></h2>
+      <!-- <h1 id="finalScore"></h1> -->
+      <h3 id="couponGuide" style="display: none; color: black; text-align: center; margin-bottom: 30px; margin-top: 30px;">Your Reward Awaits: Flash the barcode below at any kiosk in The City Ground to redeem your FREE DRINK!</h3>
       <svg id="barcode" style="display: none;"></svg>
-      <h3 style="color: black; text-align: center; margin-bottom: 30px; margin-top: 30px;">You can find out more about Nottingham Forest FC's <strong>sustainability</strong> on
-        our guide page below.</h3>
+      <h3 id="guide1" style="color: black; text-align: center; margin-bottom: 30px; margin-top: 30px;">Learn More: Visit our official sustainability page to explore the steps we’re taking to build a greener, more sustainable future.</h3>
+      <h3 id="guide2" style="color: black; text-align: center; margin-bottom: 30px; margin-top: 30px;">We’re all in this together, so keep supporting the Reds—and the planet!</h3>
       <div class="button-container">
-        <button onclick="viewInfos()">Informations</button>
-        <button onclick="goHome()">Go Home</button>
+        <button onclick="viewInfos()">Learn More</button>
+        <button onclick="goHome()">Back to Main Menu</button>
       </div>
 
     </div>

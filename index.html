@@ -5,7 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sustainability Quiz</title>
   <style>
-    body {
+    .bg-image {
+      position: fixed;          /* 스크롤해도 화면에 고정 */
+      top: 0; 
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("./background.jpg") no-repeat center center; /* 로컬 이미지 사용 예시 */
+      background-size: cover;
+      opacity: 0.6;             /* 이미지만 투명도 0.5 */
+      z-index: -1;             /* 콘텐츠보다 뒤에 깔기 위해 음수 Z-인덱스 사용 */
+    }
+
+    .content { 
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
@@ -14,7 +26,7 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      background-color: #e6f1fc;
+      /* background-color: #e6f1fc; */
       color: #e32636;
     }
 
@@ -31,7 +43,7 @@
     .title {
       font-size: 24px;
       font-weight: bold;
-      margin-bottom: 30px;
+      /* margin-bottom: 10px; */
     }
 
     .button-container {
@@ -54,21 +66,39 @@
     }
 
     button:hover {
-      background-color: #bf1f2d;
+      background-color: red;
+    }
+
+    .left-img {
+      float: left; /* 왼쪽에 배치 */
+      margin-top: 10px;
+      margin-left: 10px; /* 이미지 오른쪽 여백 (선택 사항) */
+    }
+    .right-img {
+      float: right; /* 오른쪽에 배치 */
+      margin-right: 10px; /* 이미지 왼쪽 여백 (선택 사항) */
+    }
+    .logo-img {
+      filter: drop-shadow(0px 2px 15px #c3c3c3);
     }
   </style>
 </head>
 <body>
-  <div class="logo">
-    <img src="./Nottingham_Forest_F.C._logo.png" alt="Forest Logo">
+  <div class="bg-image"></div>
+  <img class="left-img" src="./Logo_E.ON.svg.png" alt="왼쪽 이미지" width="70" />
+  <img class="right-img" src="./Adidas_2022_logo.svg.png" alt="오른쪽 이미지" width="70" />
+  <div class="content">
+    <div class="logo">
+      <img class="logo-img" src="./Nottingham_Forest_F.C._logo.png" alt="Forest Logo">
+    </div>
+    <div class="title" style="text-align: center; color:black; text-shadow: 1px 1px grey;">Nottingham Forest<br>Sustainability Quiz</div>
+    <h3 style="text-align: center; color: black; padding-left: 20px; padding-right: 20px; text-shadow: 2px 2px gray;">Are you a true Forest fan? Prove your loyalty by acing this quiz about our club’s sustainability efforts and stand a chance to win a FREE DRINK!</h3>
+    <div class="button-container">
+      <button onclick="startQuiz()">Take the Quiz</button>
+      <button onclick="viewResults()">Discover Our Sustainability Initiatives</button>
+      <!-- <button onclick="viewInfos()">Informations</button> -->
+    </div>
   </div>
-  <div class="title">Sustainability Quiz</div>
-  <div class="button-container">
-    <button onclick="startQuiz()">Play</button>
-    <button onclick="viewResults()">Visit</button>
-    <button onclick="viewInfos()">Informations</button>
-  </div>
-
   <script>
     function startQuiz() {
         window.location.href = "./game.html";
