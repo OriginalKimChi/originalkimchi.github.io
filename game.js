@@ -182,7 +182,7 @@ try {
             "incorrect_answers": [
                 "Green Alliance for Football",
                 "Global Sustainability Pact",
-                "None"
+                "None of the above"
             ]
         },
         {
@@ -203,7 +203,7 @@ try {
 
         const answerChoices = [...loadedQuestion.incorrect_answers];
 
-        if (loadedQuestion.correct_answer === "All of the above") {
+        if (loadedQuestion.correct_answer === "All of the above" || loadedQuestion.correct_answer === "None of the above") {
             formattedQuestion.answer = answerChoices.length + 1;
             answerChoices.push(loadedQuestion.correct_answer);
         } else {
