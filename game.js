@@ -203,7 +203,7 @@ try {
 
         const answerChoices = [...loadedQuestion.incorrect_answers];
 
-        if (loadedQuestion.correct_answer === "All of the above" || answerChoices.find((choice) => choice === "None of the above")) {
+        if (loadedQuestion.correct_answer === "All of the above") {
             formattedQuestion.answer = answerChoices.length + 1;
             answerChoices.push(loadedQuestion.correct_answer);
         } else {
@@ -213,6 +213,15 @@ try {
                 0,
                 loadedQuestion.correct_answer
             );
+        }
+
+        const noneIndex = answerChoices.indexOf("None of the above");
+        if (
+            noneIndex !== -1 &&
+            loadedQuestion.correct_answer !== "None of the above"
+        ) {
+            answerChoices.splice(noneIndex, 1);
+            answerChoices.push("None of the above");
         }
 
         answerChoices.forEach((choice, index) => {
